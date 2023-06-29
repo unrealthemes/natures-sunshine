@@ -1,0 +1,76 @@
+.login {
+    &-main {
+        @include media-up(md) {
+            background-color: $color-ghost;
+        }
+    }
+
+    &-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    &-block {
+        background-color: $color-white;
+        width: 100%;
+        padding: 40px 20px;
+
+        @include media-up(md) {
+            max-width: 510px;
+            margin: 80px auto;
+            border-radius: 20px;
+            padding: 28px 32px 32px;
+
+            &--restore {
+                margin-top: 200px;
+            }
+        }
+
+        @include media-up(lg) {
+            max-width: 440px;
+        }
+    }
+
+    &-tabs {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+
+        &__link {
+            text-decoration: none;
+            display: block;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: bold;
+            color: $color-main;
+            opacity: 0.3;
+            margin-right: 24px;
+            transition: opacity 0.3s;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &.active {
+                opacity: 1;
+            }
+
+            @include media-up(md) {
+                font-size: 32px;
+            }
+        }
+    }
+
+    &-panel {
+        display: none;
+        animation: fadeEffect 1s;
+
+        &.active {
+            display: block;
+        }
+    }
+}

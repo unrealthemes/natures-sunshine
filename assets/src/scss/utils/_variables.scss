@@ -1,0 +1,33 @@
+/* Media queries */
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1500px,
+);
+
+/* Fonts */
+$font-main: Circe, system-ui, sans-serif;
+
+/* Colors */
+$color-black: #000000;
+$color-main: #202020;
+$color-main-80: rgba(#202020, 0.8);
+$color-main-64: rgba(#202020, 0.64);
+$color-main-32: rgba(#202020, 0.40);
+$color-main-24: rgba(#202020, 0.24);
+$color-main-16: rgba(#202020, 0.16);
+$color-white: #FFFFFF;
+$color-white-80: rgba(#FFFFFF, 0.8);
+$color-white-64: rgba(#FFFFFF, 0.64);
+$color-white-32: rgba(#FFFFFF, 0.32);
+$color-green: #00A88F;
+$color-moonstone: #78BEB5;
+$color-ghost: #F3F4F8;
+$color-silver: #E5E5E5;
+$color-warning: #F4BD50;
+$color-alert: #EE6A5E;
+$color-error: #EB5454;
+$color-card: #F5F6FA;

@@ -1,0 +1,144 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include media-up(xl) {
+        height: auto;
+    }
+
+    &__header,
+    &__footer {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        @include media-up(xl) {
+            display: none;
+        }
+    }
+
+    &__header {
+        border-bottom: 1px solid $color-silver;
+        justify-content: space-between;
+        position: relative;
+
+        &-reset {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            background: none;
+        }
+        
+        &-title {
+            font-size: 20px;
+            line-height: 1.2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-close {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__footer {
+        justify-content: center;
+    }
+
+    &__body {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    &__row {
+        padding: 20px;
+        border-bottom: 1px solid $color-silver;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include media-up(xl) {
+            border-bottom: none;
+            padding: 40px 20px 40px 0;
+
+            &:first-of-type {
+                padding: 20px 20px 40px 0;
+            }
+
+            &:last-of-type {
+                padding: 40px 20px 20px 0;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 17px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.disabled {
+            label {
+                opacity: 0.6;
+            }
+        }
+
+        &--icon {
+
+            label {
+                //padding: 7.5px 20px 7.5px 12px;
+                //border-radius: 8px;
+
+                &:before,
+                &:after {
+                    //display: none;
+                    margin-top: 4px;
+                }
+
+                img {
+                    margin-right: 6px;
+                }
+            }
+
+            [type="checkbox"] {
+                &:checked {
+                    & + label {
+                        background-color: $color-ghost;
+                    }
+                }
+            }
+        }
+    }
+
+    &__collapse {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+
+        .filter__control {
+            padding-top: 12px;
+        }
+    }
+
+    &__show {
+        text-decoration: none;
+        color: $color-green;
+        display: inline-block;
+        margin-top: 20px;
+    }
+}

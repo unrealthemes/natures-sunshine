@@ -1,0 +1,140 @@
+.lightpick {
+    font-family: $font-main;
+    padding: 0;
+    box-shadow: 0 8px 24px rgba($color-black, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 4px;
+
+    &__month {
+        padding: 0;
+        width: auto;
+
+        &-title {
+            margin: 2px 0 0;
+            padding: 0;
+            font-size: 15px;
+            line-height: 20px;
+
+            & > .lightpick__select-months {
+                pointer-events: none;
+                font-size: 15px;
+                line-height: 20px;
+                font-weight: normal;
+                text-transform: capitalize;
+                text-align: left;
+            }
+
+            & > .lightpick__select {
+                pointer-events: none;
+                font-size: 15px;
+                line-height: 20px;
+            }
+
+            &-bar {
+                padding: 14px 0;
+                margin: 0 20px;
+                border-bottom: 1px solid $color-silver;
+            }
+        }
+    }
+
+    &__next-action,
+    &__previous-action {
+        margin: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 0;
+        background: none;
+        font-size: 0;
+    }
+
+    &__next-action {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.589 12.808C14.838 12.626 15 12.332 15 12C15 11.668 14.838 11.374 14.589 11.192L10.635 8.228C10.462 8.085 10.241 8 10 8C9.448 8 9 8.448 9 9V15C9 15.552 9.448 16 10 16C10.241 16 10.462 15.915 10.635 15.772L14.589 12.808Z' fill='%23202020'/%3E%3C/svg%3E");
+    }
+
+    &__previous-action {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.411 12.808C9.162 12.626 9 12.332 9 12C9 11.668 9.162 11.374 9.411 11.192L13.365 8.228C13.538 8.085 13.759 8 14 8C14.552 8 15 8.448 15 9V15C15 15.552 14.552 16 14 16C13.759 16 13.538 15.915 13.365 15.772L9.411 12.808Z' fill='%23202020'/%3E%3C/svg%3E");
+    }
+
+    &__days-of-the-week {
+        padding: 20px 20px 8px;
+        grid-gap: 8px;
+    }
+
+    &__day-of-the-week {
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: $color-main-32;
+        width: 28px;
+        height: 28px;
+        padding: 7px 0 5px;
+
+        @include media-up(sm) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__days {
+        padding: 0 20px 20px;
+        grid-gap: 8px;
+    }
+
+    &__day {
+        width: 28px;
+        height: 28px;
+        padding: 6px 0 5px;
+        font-size: 15px;
+        border-radius: 4px;
+        line-height: 20px;
+        color: $color-main;
+
+        @include media-up(sm) {
+            width: 32px;
+            height: 32px;
+            padding: 8px 0 4px;
+        }
+
+        &.is-next-month,
+        &.is-previous-month {
+            opacity: 1;
+            color: $color-main-32;
+        }
+
+        &.is-today {
+            color: $color-green;
+            background: none;
+        }
+
+        &.is-in-range,
+        &:not(.is-disabled):hover {
+            background: none;
+            box-shadow: inset 0 0 0 1px $color-green;
+            color: $color-green;
+            border-radius: 4px;
+        }
+
+        &.is-end-date.is-in-range,
+        &.is-start-date.is-in-range.is-flipped,
+        &.is-end-date.is-in-range.is-flipped,
+        &.is-start-date.is-in-range {
+            border-radius: 4px;
+            background: none;
+        }
+
+        &.is-end-date,
+        &.is-end-date:hover,
+        &.is-start-date,
+        &.is-start-date.is-end-date,
+        &.is-start-date:hover {
+            border-radius: 4px;
+            background: none;
+            font-weight: normal;
+            color: $color-green;
+            box-shadow: inset 0 0 0 1px $color-green;
+        }
+    }
+}

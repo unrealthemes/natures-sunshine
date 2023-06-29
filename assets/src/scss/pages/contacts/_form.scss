@@ -1,0 +1,22 @@
+.contacts {
+    &__form {
+        @include media-up(md) {
+            padding: 40px;
+        }
+
+        @include media-up(lg) {
+            max-width: 438px;
+            width: 100%;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .form__row {
+            margin-bottom: 32px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

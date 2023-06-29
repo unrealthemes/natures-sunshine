@@ -1,0 +1,5 @@
+@import "../utils/mixins";
+$font-directory: "../fonts";
+
+@include font($font_directory, "Circe", "Circe-Regular", "normal", "normal");
+@include font($font_directory, "Circe", "Circe-Bold", "bold", "normal");

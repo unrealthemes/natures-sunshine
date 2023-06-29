@@ -1,0 +1,159 @@
+.favorites {
+  &-block {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-up(md) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-list {
+
+    &--partner {
+      @include media-up(lg) {
+        max-width: 900px;
+      }
+    }
+
+    &--empty {
+      border-bottom: 1px solid $color-silver;
+      padding-bottom: 20px;
+
+      @include media-up(lg) {
+        max-width: 670px;
+      }
+    }
+  }
+
+  &-notice {
+    margin-bottom: 40px;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__text {
+      width: 100%;
+      color: $color-main-64;
+
+      @include media-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &-title {
+    flex: 1;
+  }
+
+  &-subtitle {
+    margin-bottom: 20px;
+  }
+
+  &-collapse {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    padding: 0 20px;
+
+    @include media-up(md) {
+      padding: 0 40px;
+    }
+
+    .favorites-list--empty & {
+      padding: 0;
+      left: 0;
+      transform: none;
+      width: auto;
+    }
+  }
+
+  &-panel {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $color-silver;
+
+    @include media-up(lg) {
+      .favorites-list--partner & {
+        max-width: 900px;
+      }
+    }
+
+    @include media-up(xl) {
+      max-width: 1130px;
+      margin: 20px auto 0;
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include media-up(md) {
+        padding-bottom: 20px;
+      }
+    }
+
+    &__button {
+      width: auto;
+
+      &:not(:disabled) {
+        color: $color-green;
+      }
+    }
+
+    &__navbar {
+      margin-left: auto;
+    }
+  }
+
+  &-slider {
+    overflow: visible;
+  }
+
+  &-total {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 1px solid $color-silver;
+    border-bottom: 1px solid $color-silver;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__button {
+      width: auto;
+    }
+
+    &__price {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &__count {
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+  }
+
+  &-button {
+    width: auto;
+  }
+}

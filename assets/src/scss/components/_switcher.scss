@@ -1,0 +1,69 @@
+.switcher {
+  display: flex;
+
+  &__slider {
+    display: block;
+    width: 32px;
+    height: 20px;
+    border-radius: 14px;
+    background-color: $color-silver;
+    margin-right: 12px;
+    flex-shrink: 0;
+    order: -1;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $color-white;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    & ~ label {
+      align-items: flex-start;
+      padding: 0;
+      font-size: 15px;
+      line-height: 20px;
+      position: relative;
+      transition: color 0.3s;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    &:checked {
+      & ~ label {
+        color: $color-green;
+
+        span {
+          background-color: $color-green;
+
+          &:before {
+            transform: translateX(12px);
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      & ~ label {
+        opacity: 0.5;
+      }
+    }
+  }
+}

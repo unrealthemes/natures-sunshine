@@ -1,0 +1,226 @@
+.cart {
+
+  &-sidebar {
+    @extend .form-checkout__sidebar;
+    padding: 0;
+  }
+
+  &-switcher {
+    order: -1;
+    width: 100%;
+
+    @include media-up(lg) {
+      order: unset;
+      font-size: 0;
+      align-self: flex-start;
+      display: block;
+      margin-bottom: 60px;
+    }
+
+    &__switch,
+    &__collapse {
+      @include media-down(md) {
+        display: none;
+      }
+    }
+
+    &__collapse {
+      max-height: 0;
+      transition: max-height 0.3s;
+      overflow: hidden;
+    }
+
+    &__notice {
+      padding-top: 12px;
+      font-size: 13px;
+      line-height: 20px;
+      color: $color-main-32;
+    }
+
+    &__mobile {
+      display: flex;
+      padding: 20px 0;
+
+      @include media-up(md) {
+        border-top: 1px solid #E8EBED;
+      }
+
+      @include media-up(lg) {
+        display: none;
+      }
+
+      &-icon {
+        flex-shrink: 0;
+        margin-right: 12px;
+      }
+
+      &-text {
+        font-size: 13px;
+        line-height: 20px;
+        color: $color-main-32;
+        max-width: 300px;
+      }
+    }
+  }
+
+  &-total {
+    @extend .form-checkout__total;
+    padding: 20px 0;
+
+    @include media-up(md) {
+      padding: 20px;
+    }
+
+    &__title {
+      @extend .form-checkout__total-title;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-icon {
+        flex-shrink: 0;
+        margin-left: 8px;
+        transition: transform 0.3s;
+      }
+
+      &.active {
+        .cart-total__title-icon {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &-joint {
+      padding: 20px 0 0;
+      color: $color-green;
+      order: -1;
+
+      @include media-up(md) {
+        padding: 20px 20px 0;
+      }
+
+      @include media-up(lg) {
+        padding: 20px;
+        border-radius: 16px;
+        order: unset;
+        margin-bottom: 0;
+        margin-top: 16px;
+        border: 1px solid $color-silver;
+      }
+
+      .cart-total__title {
+        margin-bottom: 16px;
+        justify-content: unset;
+
+        @include media-up(lg) {
+          margin-bottom: 20px;
+        }
+
+        img {
+          margin-right: 6px;
+        }
+
+        svg {
+          margin-left: auto;
+        }
+      }
+
+      &__points {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $color-silver;
+        padding-bottom: 20px;
+
+        @include media-up(lg) {
+          padding-bottom: 0;
+          border-bottom: none;
+          align-items: flex-end;
+        }
+      }
+
+      &__total {
+        font-size: 20px;
+
+        @include media-up(md) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__buttons {
+      font-size: 0;
+      display: flex;
+    }
+  }
+
+  &-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    border-bottom: 1px solid $color-silver;
+    margin-bottom: 20px;
+  }
+
+  &-results {
+    @extend .form-checkout__results;
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 16px;
+
+    @include media-up(lg) {
+      padding-bottom: 20px;
+    }
+
+    &__item {
+      @extend .form-checkout__results-item;
+
+      span {
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+
+        &:last-child {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  &-price {
+    @extend .form-checkout__price;
+    align-items: flex-end;
+
+    @include media-up(lg) {
+    }
+
+    &__total {
+      @extend .form-checkout__price-total;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 24px;
+      flex-shrink: 0;
+
+      .card__price-old {
+        line-height: 20px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &-points {
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-up(md) {
+      padding: 20px;
+    }
+  }
+}

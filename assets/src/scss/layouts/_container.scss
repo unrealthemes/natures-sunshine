@@ -1,0 +1,13 @@
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    @include media-up(md) {
+        padding: 0 40px;
+    }
+
+    @include media-up(xl) {
+        max-width: 1440px;
+    }
+}

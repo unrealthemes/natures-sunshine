@@ -1,0 +1,46 @@
+.breadcrumbs {
+    padding: 16px 0;
+
+    &-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 0;
+
+        &__item {
+            font-size: 15px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            margin: 4px 0;
+
+            &--current {
+                color: $color-green;
+            }
+        }
+
+        &__link {
+            display: flex;
+            text-decoration: none;
+            font-size: inherit;
+            color: $color-main-64;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-main;
+            }
+        }
+
+        &__icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        &__divider {
+            color: $color-main-64;
+            margin: 0 4px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

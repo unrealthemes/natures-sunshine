@@ -1,0 +1,7 @@
+.include {
+    @include media-up(xl) {
+        padding: 64px 0 40px;
+        max-width: 1210px;
+        margin: 0 auto;
+    }
+}

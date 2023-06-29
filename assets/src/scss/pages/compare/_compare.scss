@@ -1,0 +1,232 @@
+.compare {
+
+    &-content {
+        overflow-x: hidden;
+    }
+    
+    .wrapper {
+        overflow: auto;
+    }
+
+    &-inner {
+        @include media-up(xl) {
+            max-width: 1130px;
+            width: 100%;
+            margin: 0 auto;
+
+            .full-width & {
+                max-width: none;
+            }
+        }
+    }
+
+    &-wrapper {
+        @include media-up(lg) {
+            width: 100%;
+            min-width: 900px;
+
+            .full-width & {
+                min-width: auto;
+                //width: 100%;
+            }
+        }
+    }
+
+    &-header {
+        margin-bottom: 20px;
+
+        &__text {
+            margin-top: 12px;
+        }
+    }
+
+    &-sticky {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        background-color: $color-white;
+        overflow: hidden;
+
+        @include media-up(lg) {
+            position: sticky;
+            z-index: 2;
+            top: 0;
+        }
+
+        &.sticky {
+            padding-bottom: 20px;
+            //left: 0;
+            width: 100%;
+            //transition: top 0.16s;
+
+            & + .compare-content {
+                padding-top: 40px;
+            }
+        }
+    }
+
+    &-bar {
+        width: 100%;
+        margin-bottom: 20px;
+        cursor: default;
+        background-color: $color-white;
+
+        @include media-up(lg) {
+            padding: 12px 0;
+            margin-bottom: 0;
+        }
+
+        //&.sticky {
+        //    position: fixed;
+        //    left: 0;
+        //    width: 100%;
+        //    z-index: 2;
+        //}
+
+        &__alert {
+            margin-right: 12px;
+            display: none;
+
+            &.shown {
+                display: inline-flex;
+            }
+        }
+
+        &__button {
+            width: auto;
+            color: $color-main-64;
+
+            &--green {
+                color: $color-green;
+
+                //.btn__text {
+                //    display: block;
+                //}
+            }
+        }
+    }
+
+    &-slider {
+        width: 100%;
+        overflow: hidden;
+
+        //.cards__next, .cards__prev {
+        //    top: 50%;
+        //}
+    }
+
+    &-swiper {
+        overflow: visible;
+    }
+
+    &-card {
+
+        &.cards__item {
+            min-width: 162px;
+            flex: 1 0 25%;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @include media-up(md) {
+                margin-right: 20px;
+                width: calc(25% - 15px);
+                flex: 1 0 calc(25% - 15px);
+            }
+
+            @include media-up(lg) {
+                max-width: 440px;
+            }
+        }
+
+        &--4 {
+            @include media-down(md) {
+                .btn {
+                    &-icon {
+                        padding: 8px 20px;
+                        flex: 1;
+                    }
+
+                    &__icon {
+                        margin: 0;
+                    }
+
+                    &__text {
+                        display: none;
+                    }
+                }
+            }
+
+            @include media-down(sm) {
+                &.cards__item {
+                    min-width: auto;
+                    width: 162px;
+                    flex: unset;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        .card__controls-buy {
+            flex: unset;
+        }
+    }
+
+    &-specs {
+        margin-top: 20px;
+
+        @include media-up(md) {
+            margin-top: 40px;
+        }
+
+        &__item {
+            border-top: 1px solid $color-silver;
+
+            &:last-child {
+                border-bottom: 1px solid $color-silver;
+            }
+        }
+
+        &__link {
+            padding: 20px 0;
+            text-decoration: none;
+            color: $color-main-32;
+            font-weight: bold;
+            font-size: 17px;
+            transition: color 0.3s;
+
+            &:hover,
+            &.active {
+                color: $color-main;
+            }
+
+            .collapse-icon {
+                color: $color-main;
+            }
+        }
+
+        &__slider {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.specs {
+    &-list {
+
+        &__item {
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            svg,
+            .btn__icon {
+                margin-right: 6px;
+            }
+        }
+    }
+}

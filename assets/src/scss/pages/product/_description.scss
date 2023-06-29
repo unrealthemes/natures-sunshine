@@ -1,0 +1,252 @@
+.description {
+
+    .tabs {
+        display: none;
+
+        @include media-up(md) {
+            display: flex;
+            padding: 50px 0 10px;
+        }
+
+        @include media-up(xl) {
+            margin: 0 auto;
+            max-width: 1130px;
+        }
+
+        &-link {
+            color: $color-main-64;
+            margin-right: 40px;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                color: $color-main;
+            }
+
+            &.active {
+                color: $color-green;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    top: calc(100% + 9px);
+                    height: 1px;
+                    background-color: $color-green;
+                }
+            }
+        }
+
+        &-panels {
+
+            @include media-up(md) {
+                position: relative;
+                z-index: 1;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    left: 50%;
+                    top: 0;
+                    width: 100vw;
+                    height: 100%;
+                    transform: translateX(-50%);
+                    background-color: $color-ghost;
+                }
+            }
+        }
+
+        &-panel {
+            padding: 20px 0;
+
+            @include media-up(md) {
+                padding: 40px 0;
+                max-height: none;
+                display: none;
+                animation: fadeEffect 1s;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            @include media-up(xl) {
+                padding: 80px 0;
+                max-width: 1130px;
+                margin: 0 auto;
+            }
+
+            &__title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                @include media-down(xs) {
+                    font-size: 17px;
+                }
+
+                @include media-up(md) {
+                    margin-bottom: 32px;
+                    cursor: default;
+                }
+
+                svg {
+                    margin-left: 8px;
+                    flex-shrink: 0;
+                    transition: transform 0.3s;
+
+                    @include media-up(md) {
+                        display: none;
+                    }
+                }
+                
+                &.active {
+                    svg {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+
+            &__collapse {
+
+                @include media-down(sm) {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s;
+                }
+            }
+
+            &__content {
+                @include media-down(sm) {
+                    padding-top: 32px;
+                }
+            }
+        }
+    }
+
+    .composition {
+        &__title {
+            @include media-up(md) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__content {
+            max-height: 650px;
+            overflow-y: auto;
+            padding-right: 8px;
+
+            @include media-up(md) {
+                padding-right: 12px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 4px;
+
+                @include media-up(md) {
+                    width: 8px;
+                }
+
+                &-thumb {
+                    border-radius: 10px;
+                    background-color: $color-silver;
+                }
+            }
+
+            @include media-up(md) {
+                max-width: 682px;
+            }
+
+            ul {
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 16px 0;
+                    border-top: 1px solid $color-silver;
+
+                    &:last-child {
+                        border-bottom: 1px solid $color-silver;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .certificates {
+        .tabs-panel__collapse {
+            @include media-down(sm) {
+                padding: 0 20px;
+                position: relative;
+                width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &-slider {
+            overflow: visible;
+
+            @include media-down(sm) {
+                padding: 1px;
+            }
+
+            &__link {
+                display: block;
+                text-decoration: none;
+                color: $color-black;
+            }
+
+            &__image {
+                border-radius: 12px;
+                overflow: hidden;
+                height: 0;
+                padding-top: 141%;
+                position: relative;
+
+                @include media-down(sm) {
+                    box-shadow: 0 0 0 1px $color-ghost;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__text {
+                margin-top: 12px;
+            }
+
+            .cards__prev,
+            .cards__next {
+                top: 50%;
+            }
+        }
+    }
+
+    .testimonials {
+        &__comments {
+            &:not(.comments--empty) {
+                @include media-up(md) {
+                    max-width: 670px;
+                }
+            }
+        }
+    }
+}

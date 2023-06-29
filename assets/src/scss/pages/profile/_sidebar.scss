@@ -1,0 +1,98 @@
+.profile-sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 12px 6px;
+    background-color: $color-white;
+    z-index: 1;
+    width: 100%;
+
+    @include media-up(sm) {
+        padding: 0;
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        @include media-up(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &-item {
+            text-align: center;
+
+            @include media-up(sm) {
+                width: fit-content;
+                text-align: unset;
+                margin-bottom: 12px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.is-active a,
+            a:hover {
+                color: $color-green;
+                @include media-up(sm) {
+                    color: $color-main;
+                    opacity: 1;
+                    background-color: $color-card;
+                }
+            }
+        }
+
+    }
+
+}
+
+.sidebar-item {
+    &__link {
+        color: $color-main-64;
+        transition: color .3s;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media-up(sm) {
+            padding: 8px 20px 8px 12px;
+            flex-direction: row;
+            justify-content: center;
+            color: $color-main;
+            opacity: .4;
+            transition: opacity .3s;
+            border-radius: 8px;
+        }
+
+        svg {
+            @include media-up(lg) {
+                margin-right: 8px;
+            }
+        }
+
+        &-text {
+            display: none;
+
+            @include media-up(lg) {
+                display: block;
+                font-size: 15px;
+            }
+
+            &--mobile {
+                display: block;
+                font-size: 11px;
+
+                @include media-up(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

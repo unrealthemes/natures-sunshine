@@ -1,0 +1,25 @@
+.langs {
+    display: flex;
+
+    &__item {
+        font-size: 13px;
+        line-height: 1.54;
+        text-decoration: none;
+        color: $color-main-32;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $color-main-80;
+        }
+
+        &--current {
+            color: $color-main;
+        }
+    }
+
+    &__divider {
+        width: 1px;
+        margin: 0 8px;
+        background-color: $color-silver;
+    }
+}

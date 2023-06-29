@@ -1,0 +1,15 @@
+{
+    "name": "kick/wp-theme",
+    "autoload": {
+        "psr-4": {
+            "App\\": "\\"
+        }
+    },
+    "authors": [
+        {
+            "name": "kick",
+            "email": "kick00shneir@gmail.com"
+        }
+    ],
+    "require": {}
+}

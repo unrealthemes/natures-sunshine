@@ -1,0 +1,98 @@
+.comments {
+    $self: &;
+
+    &--empty {
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__notice {
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include media-up(md) {
+            margin-bottom: 40px;
+        }
+
+        &-highlight {
+            color: $color-green;
+        }
+    }
+
+    &__header {
+        margin-bottom: 24px;
+
+        @include media-up(sm) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__button {
+        @include media-up(md) {
+            margin-left: 8px;
+        }
+
+        #{$self}--empty & {
+            @include media-up(sm) {
+                margin-left: 0;
+                max-width: 210px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-row {
+            padding: 20px 0;
+            border-radius: 12px;
+
+            @include media-up(md) {
+                padding: 20px;
+            }
+
+            &--answer {
+                background-color: $color-ghost;
+                padding-left: 64px;
+                position: relative;
+
+                @include media-up(md) {
+                    background-color: $color-white;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 4V6.4C5.5 9.76031 5.5 11.4405 6.15396 12.7239C6.7292 13.8529 7.64708 14.7708 8.77606 15.346C10.0595 16 11.7397 16 15.1 16H19.5M19.5 16L15.5 12M19.5 16L15.5 20' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        &-top {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-date {
+            margin-left: 8px;
+            color: $color-main-64;
+        }
+    }
+}

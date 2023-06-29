@@ -1,0 +1,12 @@
+.public {
+    &-form {
+
+        @include media-up(sm) {
+            max-width: 510px;
+        }
+
+        @include media-up(lg) {
+            max-width: 670px;
+        }
+    }
+}

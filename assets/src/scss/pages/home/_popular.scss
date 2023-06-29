@@ -1,0 +1,15 @@
+.popular {
+    display: none;
+    
+    @include media-up(lg) {
+        display: block;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &-products {
+        overflow: visible;
+    }
+}

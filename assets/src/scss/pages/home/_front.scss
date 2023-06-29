@@ -1,0 +1,106 @@
+.front {
+    background-color: $color-ghost;
+    padding-bottom: 20px;
+
+    @include media-up(lg) {
+        padding-bottom: 40px;
+    }
+
+    & > .container {
+        @include media-down(sm) {
+            padding: 0;
+        }
+    }
+
+    &-carousel {
+        padding-bottom: 18px;
+        width: 100%;
+
+        @include media-up(md) {
+            padding-bottom: 28px;
+            border-radius: 20px;
+        }
+
+        &__slide {
+            height: 374px;
+            padding: 20px;
+            position: relative;
+
+            @include media-up(md) {
+                overflow: hidden;
+                border-radius: 12px;
+                height: 256px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            @include media-up(lg) {
+                border-radius: 20px;
+                height: 325px;
+            }
+        }
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+
+            @include media-up(md) {
+                display: block;
+                //max-width: 566px;
+                height: auto;
+                transition: max-width 0.2s;
+                will-change: max-heigth;
+            }
+
+            @include media-up(lg) {
+                max-width: 700px;
+            }
+
+            @include media-up(xl) {
+                max-width: 900px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 12px;
+        }
+
+        &__text {
+            margin-bottom: 40px;
+            font-size: 15px;
+            line-height: 1.33;
+        }
+
+        &__btn {
+            margin-top: auto;
+        }
+    }
+
+    //&-advantages {
+    //    padding-top: 20px;
+    //
+    //    @include media-up(lg) {
+    //        padding-top: 40px;
+    //    }
+    //}
+}

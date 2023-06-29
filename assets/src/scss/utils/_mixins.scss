@@ -1,0 +1,71 @@
+@import "variables";
+@import "functions";
+
+// Fonts
+@mixin font($font_directory, $font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		src: url('#{$font_directory}/#{$font_name}/#{$file_name}.woff2') format('woff2'),
+		url('#{$font_directory}/#{$font_name}/#{$file_name}.woff') format('woff');
+		font-weight: #{$weight};
+		font-style: #{$style};
+		font-display: swap;
+	}
+}
+
+// Media queries
+@mixin media-up($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+
+	@else {
+		@content;
+	}
+}
+
+@mixin media-down($name, $breakpoints: $grid-breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+
+	@else {
+		@content;
+	}
+}
+
+@mixin media-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($lower, $breakpoints);
+	$max: breakpoint-max($upper, $breakpoints);
+
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+@mixin media-only($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	$max: breakpoint-max($name, $breakpoints);
+
+	@if $min !=null and $max !=null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+
+	@else if $max==null {
+		@include media-up($name)
+	}
+
+	@else if $min==null {
+		@include media-down($name)
+	}
+}
